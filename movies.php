@@ -23,18 +23,22 @@
               <thead>
                 <tr id="table-first-row">
                         <th>id</th>
-                        <th>Local Name</th>
+                        <th>Native Name</th>
                         <th>English Name</th>
                         <th>Year </th>
+                        <th>Display</th>
                 </tr>
               </thead>
 
               <tfoot>
                 <tr>
-                <th>id</th>
+                        <th>id</th>
                         <th>Native Name</th>
                         <th>English Name</th>
-                        <th>Year </th></tr>
+                        <th>Year </th>
+                        <th>Display</th>
+                </tr>
+                       
               </tfoot>
 
               <tbody>
@@ -52,6 +56,8 @@ $result = $db->query($sql);
                                 <td>'.$row["native_name"].' </span> </td>
                                 <td>'.$row["english_name"].'</td>
                                 <td>'.$row["year_made"].'</td>
+                                <td><a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_id"].'">Display</a></td>
+                              
                             </tr>';
                     }//end while
                 }//end if
