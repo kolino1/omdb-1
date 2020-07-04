@@ -62,7 +62,7 @@ if(isset($_GET['id'])){
                       WHERE mp.movie_id = '$id';";
   
   $sql_movieSong  = "SELECT 
-                      ms.movie_id,
+                        ms.movie_id,
                         ms.song_id,
                         sm.s_link,
                         sm.s_link_type,
@@ -101,10 +101,10 @@ if(isset($_GET['id'])){
     echo'<img src="images/movie_images/'.$moviePosters_row["m_link"].'"/>';
    }
 
-  }//end if
+  }
   else {
-    echo "Movie poster not avaiable";
-}//end else
+    echo "Movie poster not available";
+}
 
   if($movieData -> num_rows > 0){
     print('<h1>Movie Data</h1>');
@@ -120,7 +120,9 @@ if(isset($_GET['id'])){
       <br>
       ');
     }
-  }
+  }  else {
+    echo "Movie Data not available";
+}
 
   if($movieData1 -> num_rows > 0){
     while($movieData1_row = $movieData1 -> fetch_assoc()){
@@ -131,7 +133,9 @@ if(isset($_GET['id'])){
       ');
     }
 
-  }
+  }   else {
+    echo "movie keyword, trivia are not available";
+}
  
    if($moviePeople ->num_rows > 0){
      print('<h1>Movie People</h1>');
@@ -141,7 +145,9 @@ if(isset($_GET['id'])){
           echo '<h4>'.$moviePeople_row['fullname'].'</h4>';
 
      }
-   }
+   }  else {
+    echo "Movie people not available";
+}
 
    if($movieSong -> num_rows > 0){
     print('<h1>Movie Songs</h1>');
@@ -149,9 +155,9 @@ if(isset($_GET['id'])){
       echo '<h5><label>Song Title: </label>   '.$movieSong_row["title"].'</h5>';
       echo '<a target="_blank" href="'.$movieSong_row["s_link"].'">Play</a>';
     }
-   }
-
-
+   }  else {
+    echo "Movie song not available";
+}
 
 
 }
