@@ -1,53 +1,45 @@
 <?php
-  $nav_selected = "REPORTS";
-  $left_buttons = "NO";
-  $left_selected = "";
+
+  $nav_selected = "SONGS"; 
+  $left_buttons = "YES"; 
+  $left_selected = "SONGS"; 
 
   include("./nav.php");
-  
- ?>
+  global $db;
+
+  ?>
+
 
 <div class="right-content">
     <div class="container">
 
-      <h3 style = "color: #01B0F1;">Reports</h3>
+      <h3 style = "color: #01B0F1;">Song People</h3>
         <table id="info" cellpadding="0" cellspacing="0" border="0"
             class="datatable table table-striped table-bordered datatable-style table-hover"
             width="100%" style="width: 100px;">
               <thead>
                 <tr id="table-first-row">
-                        <th>Movie Year</th>
-                        <th>Movie Count</th>
-                    
+                        <th>Song Id</th>
+                        <th>People Id</th>
+                        <th>Role</th>
                 </tr>
               </thead>
-
-              <tfoot>
-                <tr>
-                        <th>Movie Year</th>
-                        <th>Movie Count</th>
-                </tr>
-                       
-              </tfoot>
 
               <tbody>
 
               <?php
 
-$sql = "SELECT year_made, COUNT(year_made) as movie_count
-        FROM `movies`
-        GROUP BY year_made 
-        ORDER BY year_made Desc;";
-
+$sql = "SELECT * FROM `song_people`";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
-                                <td>'.$row["year_made"].'</td>
-                                <td>'.$row["movie_count"].' </span> </td>
-                    
+                                <td>'.$row["song_id"].'</td>
+                                <td>'.$row["people_id"].'</td>
+                                <td>'.$row["role"].'</td>
+                               
                             </tr>';
                     }//end while
                 }//end if
