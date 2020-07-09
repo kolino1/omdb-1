@@ -1,53 +1,55 @@
 <?php
-  $nav_selected = "REPORTS";
-  $left_buttons = "NO";
-  $left_selected = "";
+
+  $nav_selected = "SONGS"; 
+  $left_buttons = "YES"; 
+  $left_selected = "SONGS"; 
 
   include("./nav.php");
-  
- ?>
+  global $db;
+
+  ?>
+
 
 <div class="right-content">
     <div class="container">
 
-      <h3 style = "color: #01B0F1;">Reports</h3>
+      <h3 style = "color: #01B0F1;">SONG List</h3>
         <table id="info" cellpadding="0" cellspacing="0" border="0"
             class="datatable table table-striped table-bordered datatable-style table-hover"
             width="100%" style="width: 100px;">
               <thead>
                 <tr id="table-first-row">
-                        <th>Movie Year</th>
-                        <th>Movie Count</th>
-                    
+                        <th>Movie Name</th>
+                        <th>Song Title</th>
+                        <th>Lyrics</th>
+                        <th>Play</th>
                 </tr>
               </thead>
-
-              <tfoot>
-                <tr>
-                        <th>Movie Year</th>
-                        <th>Movie Count</th>
-                </tr>
-                       
-              </tfoot>
 
               <tbody>
 
               <?php
 
-$sql = "SELECT year_made, COUNT(year_made) as movie_count
-        FROM `movies`
-        GROUP BY year_made 
-        ORDER BY year_made Desc;";
-
+$sql = "SELECT 
+            mv.english_name,
+            s.title,
+            sm.s_link,
+            SUBSTRING(s.lyrics, 1, 50) as lyrics
+            FROM movie_song ms
+            INNER JOIN `song_media` sm USING(song_id)
+            INNER JOIN `movies` mv USING(movie_id)
+            INNER JOIN `songs` s USING(song_id)";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
-                                <td>'.$row["year_made"].'</td>
-                                <td>'.$row["movie_count"].' </span> </td>
-                    
+                                <td>'.$row["english_name"].'</td>
+                                <td>'.$row["title"].'</td>
+                                <td>'.$row["lyrics"].'</td>
+                                <td><a target="_blank" class="btn btn-info btn-sm" href="'.$row["s_link"].'">Play</a></td>
+                              
                             </tr>';
                     }//end while
                 }//end if
