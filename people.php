@@ -9,7 +9,7 @@
 
   ?>
 <style>
-  img{
+  img.people{
     width: 100px;
     height: auto;
   }
@@ -52,7 +52,7 @@ $result = $db->query($sql);
                                 <td>'.$row["first_name"].'</td>
                                 <td>'.$row["middle_name"].'</td>
                                 <td>'.$row["last_name"].'</td>
-                                <td><img src="images/movie_people/'.$row["image_name"].'" ></td>
+                                <td><img class="people" src="images/movie_people/'.$row["image_name"].'" ></td>
                                
                             </tr>';
                     }//end while
