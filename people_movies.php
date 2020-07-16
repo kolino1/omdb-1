@@ -23,7 +23,7 @@
               <thead>
                 <tr id="table-first-row">
                         <th>id</th>
-                        <th>Screen Name </th>
+                        <th>Stage Name </th>
                         <th>First Name</th>
                         <th>Middle Name</th>
                         <th>Last Name</th>
@@ -42,7 +42,7 @@ $result = $db->query($sql);
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
                                 <td>'.$row["id"].'</td>
-                                <td>'.$row["screen_name"].' </span> </td>
+                                <td>'.$row["stage_name"].' </span> </td>
                                 <td>'.$row["first_name"].'</td>
                                 <td>'.$row["middle_name"].'</td>
                                 <td>'.$row["last_name"].'</td>
