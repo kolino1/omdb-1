@@ -43,7 +43,9 @@ GROUP BY movie_data.genre
 
 //  query # 57  Abdi Ali
 
-SELECT * 
+SELECT 
+	`movies`.`english_name`,
+    `movie_media`.m_link_type  
 FROM `movies` 
 INNER JOIN `movie_media` USING(movie_id)
 WHERE movie_media.m_link_type like '%poster%'
