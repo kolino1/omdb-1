@@ -34,6 +34,28 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Data: None
 --
 
+--
+-- Structure for view `people_view`
+--
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `people_view`  AS  select `p`.`id` AS `id`,`p`.`stage_name` AS `stage_name`,`p`.`first_name` AS `first_name`,`p`.`middle_name` AS `middle_name`,`p`.`last_name` AS `last_name`,`p`.`gender` AS `gender`,`p`.`image_name` AS `image_name`,`t`.`people_trivia_name` AS `people_trivia_name`,`mp`.`movie_id` AS `movie_id`,`mp`.`screen_name` AS `screen_name`,`mp`.`role` AS `movie_role`,`m`.`native_name` AS `native_name`,`m`.`english_name` AS `english_name`,`m`.`year_made` AS `year_made`,`sp`.`role` AS `song_role`,`s`.`title` AS `song_title` from (((((`people` `p` left join `people_trivia` `t` on(`p`.`id` = `t`.`people_id`)) left join `movie_people` `mp` on(`p`.`id` = `mp`.`people_id`)) left join `movies` `m` on(`mp`.`movie_id` = `m`.`movie_id`)) left join `song_people` `sp` on(`p`.`id` = `sp`.`people_id`)) left join `songs` `s` on(`sp`.`song_id` = `s`.`song_id`)) ;
+
+--
+-- VIEW `people_view`
+-- Data: None
+--
+
+--
+-- Structure for view `song_view`
+--
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `song_view`  AS  select `s`.`song_id` AS `song_id`,`s`.`title` AS `title`,`s`.`theme` AS `theme`,`s`.`lyrics` AS `lyrics`,`sm`.`song_media_id` AS `song_media_id`,`sm`.`s_link` AS `s_link`,`sm`.`s_link_type` AS `s_link_type`,`sp`.`people_id` AS `people_id`,`sp`.`role` AS `song_role`,`p`.`first_name` AS `first_name`,`p`.`middle_name` AS `middle_name`,`p`.`last_name` AS `last_name`,`ms`.`movie_id` AS `movie_id`,`m`.`native_name` AS `native_name`,`m`.`english_name` AS `english_name`,`m`.`year_made` AS `year_made` from (((((`songs` `s` left join `song_media` `sm` on(`s`.`song_id` = `sm`.`song_id`)) left join `song_people` `sp` on(`s`.`song_id` = `sp`.`song_id`)) left join `people` `p` on(`sp`.`people_id` = `p`.`id`)) left join `movie_song` `ms` on(`s`.`song_id` = `ms`.`song_id`)) left join `movies` `m` on(`ms`.`movie_id` = `m`.`movie_id`)) ;
+
+--
+-- VIEW `song_view`
+-- Data: None
+--
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
