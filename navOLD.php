@@ -29,162 +29,62 @@
         <ul>
             <a href="index.php">
               <li class="horozontal-li-logo">
-              <svg
-                  width="60"
-                  height="50"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#database"/>
-                  </svg>
+              <img src ="./images/omdb_logo.png">
               <br/>Online Movie Database</li>
             </a>
 
             <a href="index.php">
               <li <?php if($nav_selected == "HOME"){ echo 'class="current-page"'; } ?>>
-              <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#home"/>
-                  </svg>
+              <img src="./images/home.png">
               <br/>Home</li>
             </a>
 
             <a href="movies.php">
               <li <?php if($nav_selected == "MOVIES"){ echo 'class="current-page"'; } ?>>
-              <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#film"/>
-                  </svg>
+                <img src="./images/movies.png">
                 <br/>Movies</li>
             </a>
 
             <a href="people.php">
               <li <?php if($nav_selected == "PEOPLE"){ echo 'class="current-page"'; } ?>>
-              <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#users"/>
-                  </svg>
+              <img src="./images/people.png">
               <br/>People</li>
             </a>
 
             <a href="songs.php">
               <li <?php if($nav_selected == "SONGS"){ echo 'class="current-page"'; } ?>>
-              <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#music"/>
-                  </svg>
+                <img src="./images/songs.png">
                 <br/>Songs</li>
             </a>
 
             <a href="reports.php">
               <li <?php if($nav_selected == "REPORTS"){ echo 'class="current-page"'; } ?>>
-              <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#file-text"/>
-                  </svg>
+              <img src="./images/reports.png">
               <br/>Reports</li>
             </a>
 
            <a href="puzzles.php">
               <li <?php if($nav_selected == "PUZZLES"){ echo 'class="current-page"'; } ?>>
-              <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#unlock"/>
-                  </svg>
+                <img src="./images/puzzles.png">
                 <br/>Puzzles</li>
             </a>
 
 
         <a href="setup.php">
           <li <?php if($nav_selected == "SETUP"){ echo 'class="current-page"'; } ?>>
-          <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#settings"/>
-                  </svg>
+            <img src="./images/setup.png">
             <br/>Setup</li>
         </a>
 
         <a href="about.php">
           <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
-          <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#info"/>
-                  </svg>
+            <img src="./images/about.png">
             <br/>About</li>
         </a>
 
         <a href="help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>
-          <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  >
-                    <use xlink:href="./images/feather_images/feather-sprite.svg#help-circle"/>
-                  </svg>
+            <img src="./images/help.png">
             <br/>Help</li>
         </a>
 
