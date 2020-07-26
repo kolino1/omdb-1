@@ -47,9 +47,9 @@ $result = $db->query($sql);
                                 <td>'.$row["native_name"].' </span> </td>
                                 <td>'.$row["english_name"].'</td>
                                 <td>'.$row["year_made"].'</td>
-                                <td><a class="btn btn-info btn-sm" href="movie_info.php?movie_id='.$row["movie_id"].'">Display</a>
-                                    <a class="btn btn-warning btn-sm" href="modify_movie.php?movie_id='.$row["movie_id"].'">Modify</a>
-                                    <a class="btn btn-danger btn-sm" href="delete_movie.php?movie_id='.$row["movie_id"].'">Delete</a></td>          
+                                <td><a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_id"].'">Display</a>
+                                    <a class="btn btn-warning btn-sm" href="modify_movie.php?id='.$row["movie_id"].'">Modify</a>
+                                    <a class="btn btn-danger btn-sm" href="delete_movie.php?id='.$row["movie_id"].'">Delete</a></td>          
                             </tr>';
                     }//end while
                 }//end if
