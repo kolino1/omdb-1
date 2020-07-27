@@ -41,11 +41,18 @@ if(isset($_GET['id'])){
                     INNER JOIN `movie_data` USING(movie_id) 
                     WHERE movies.movie_id = '$id';";
 
-  $sql_movieData1 = "SELECT * FROM `movies` 
+  /*$sql_movieData1 = "SELECT * FROM `movies` 
                     INNER JOIN `movie_keywords` USING(movie_id)
                     INNER JOIN `movie_trivia` USING(movie_id)
                     WHERE movies.movie_id = '$id';";
-
+  */
+//////////////
+  $sql_movieKeywords = "SELECT * FROM `movie_keywords`
+                    WHERE movie_keywords.movie_id = '$id';";
+  
+  $sql_movieTrivia = "SELECT * FROM `movie_trivia`
+                    WHERE movie_id = '$id';";
+//////////////
 
 
   $sql_moviePosters = "SELECT * FROM `movie_media` 
@@ -55,7 +62,7 @@ if(isset($_GET['id'])){
   
   $sql_moviePeople = "SELECT mp.role, 
                              concat(p.first_name, ' ' , last_name) as fullname,
-                             p.screen_name,
+                             p.stage_name,
                              p.image_name
                       FROM `movie_people` mp
                       INNER JOIN `people` p ON	mp.people_id = p.id
@@ -74,7 +81,11 @@ if(isset($_GET['id'])){
   
   $result = $db->query($sql);
   $movieData = $db->query($sql_movieData);
-  $movieData1 = $db->query($sql_movieData1);
+  //$movieData1 = $db->query($sql_movieData1);
+  ////////////
+  $movieTrivia = $db->query($sql_movieTrivia);
+  $movieKeywords = $db->query($sql_movieKeywords);
+  ////////////
   $moviePosters = $db->query($sql_moviePosters);
   $moviePeople = $db->query($sql_moviePeople);
   $movieSong = $db->query($sql_movieSong);
@@ -124,6 +135,7 @@ if(isset($_GET['id'])){
     echo "Movie Data not available";
 }
 
+/*
   if($movieData1 -> num_rows > 0){
     while($movieData1_row = $movieData1 -> fetch_assoc()){
       print('
@@ -135,7 +147,32 @@ if(isset($_GET['id'])){
 
   }   else {
     echo "movie keyword, trivia are not available";
+*/
+//////////////////
+if($movieTrivia -> num_rows > 0){
+  while($movieTrivia_row = $movieTrivia -> fetch_assoc()){
+    print('
+    <br>
+    <div><label>Trivia : </label>  '.$movieTrivia_row["trivia"].'</div>
+    ');
+  }
+
+}   else {
+  echo "movie trivia not available";
 }
+
+  if($movieKeywords -> num_rows > 0){
+    while($movieKeywords_row = $movieKeywords -> fetch_assoc()){
+      print('
+      <br>
+      <div><label>Keyword : </label>  '.$movieKeywords_row["keyword"].'</div>
+      ');
+    }
+  
+  }   else {
+    echo "movie keyword not available";
+  }
+/////////////////
  
    if($moviePeople ->num_rows > 0){
      print('<h1>Movie People</h1>');
