@@ -8,7 +8,11 @@
   global $db;
 
   ?>
+<style>
+  td{
 
+  }
+</style>
 
 <div class="right-content">
     <div class="container">
@@ -33,25 +37,22 @@
                 </tr>
               </thead>
 
-              <!-- <tfoot>
-                <tr>
-            
-                        <th>ID</>
-                        <th>Native Name</th>
-                        <th>English Name</th>
-                        <th>Year </th></tr>
-                        <th>Language</th>
-                        <th>Country</th>
-                        <th>Genre </th>
-                        <th>Plot </th>
-                    </tr>
-              </tfoot> -->
-
               <tbody>
 
               <?php
 
-$sql = "SELECT m.movie_id,m.native_name,m.english_name,m.year_made,md.language,md.country, md.genre,md.plot FROM movies m INNER JOIN `movie_data` md ON md.movie_id = m.movie_id ORDER BY year_made ASC;";
+$sql = "SELECT 
+            m.movie_id,
+            m.native_name,
+            m.english_name,
+            m.year_made,
+            md.language,
+            md.country, 
+            md.genre,
+            SUBSTRING(md.plot, 1, 30) as plot
+          FROM movies m 
+          INNER JOIN `movie_data` md ON md.movie_id = m.movie_id 
+          ORDER BY year_made ASC;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {

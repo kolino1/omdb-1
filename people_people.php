@@ -53,7 +53,6 @@ $result = $db->query($sql);
                                 <td>'.$row["middle_name"].'</td>
                                 <td>'.$row["last_name"].'</td>
                                 <td><img class="people" src="images/movie_people/'.$row["image_name"].'" ></td>
-                               
                             </tr>';
                     }//end while
                 }//end if
