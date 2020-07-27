@@ -8,13 +8,7 @@
   global $db;
 
   ?>
-<style>
-  img.people{
-    width: 100px;
-    height: auto;
-  }
 
-</style>
 
 <div class="right-content">
     <div class="container">
@@ -52,8 +46,7 @@ $result = $db->query($sql);
                                 <td>'.$row["first_name"].'</td>
                                 <td>'.$row["middle_name"].'</td>
                                 <td>'.$row["last_name"].'</td>
-                                <td><img class="people" src="images/movie_people/'.$row["image_name"].'" ></td>
-                               
+                                <td>'.$row["image_name"].'</td>
                             </tr>';
                     }//end while
                 }//end if
