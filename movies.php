@@ -16,6 +16,30 @@
       <h3 style = "color: #01B0F1;">Movies -> Movies List</h3>
 
     <button><a class="btn btn-sm" href="create_movie.php">Create a Movie</a></button>
+
+    <!--Banner Messages-->
+    <div class="container-fluid">
+    <?php
+        if(isset($_GET['createMovies'])){
+            if($_GET["createMovies"] == "Success"){
+                echo '<br><h3>Success! Your movie has been added!</h3>';
+            }
+        }
+
+        if(isset($_GET['movieUpdated'])){
+            if($_GET["movieUpdated"] == "Success"){
+                echo '<br><h3>Success! Your movie has been modified!</h3>';
+            }
+        }
+
+        if(isset($_GET['movieDeleted'])){
+            if($_GET["movieDeleted"] == "Success"){
+                echo '<br><h3>Success! Your movie has been deleted!</h3>';
+            }
+        }
+
+    ?>
+    <!------------------->
        
 <br>
 
@@ -49,7 +73,7 @@ $result = $db->query($sql);
                                 <td>'.$row["year_made"].'</td>
                                 <td><a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_id"].'">Display</a>
                                     <a class="btn btn-warning btn-sm" href="modify_movie.php?id='.$row["movie_id"].'">Modify</a>
-                                    <a class="btn btn-danger btn-sm" href="delete_movie.php?id='.$row["movie_id"].'">Delete</a></td>          
+                                    <a class="btn btn-danger btn-sm" href="deleteMovie.php?id='.$row["movie_id"].'">Delete</a></td>          
                             </tr>';
                     }//end while
                 }//end if

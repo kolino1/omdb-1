@@ -13,6 +13,6 @@ if (isset($_POST['movie_id'])){
             WHERE movie_id = '$id'";
 
     mysqli_query($db, $sql);
-    header('location: list.php?movieDeleted=Success');
+    header('location: movies.php?movieDeleted=Success');
 }//end if
 ?>

@@ -1,7 +1,7 @@
 
-<?php $page_title = 'ABCDishes > Delete dish'; ?>
+<?php $page_title = 'OMDB > Delete Movie'; ?>
 <?php
-    require 'bin/functions.php';
+    require 'functions.php';
     require 'db_configuration.php';
   
   $nav_selected = "LIST";
@@ -23,9 +23,9 @@
 <?php
 include_once 'db_configuration.php';
 
-if (isset($_GET['movie_id'])){
+if (isset($_GET['id'])){
 
-    $id = $_GET['movie_id'];
+    $id = $_GET['id'];
 
     $sql = "SELECT * FROM movies
             WHERE movie_id = '$id'";
@@ -38,74 +38,34 @@ if (isset($_GET['movie_id'])){
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo '<form action="deleteTheDish.php" method="POST">
+        echo '<form action="deleteTheMovie.php" method="POST">
     <br>
-    <h3 id="title">Delete Dish</h3><br>
-    <h2>'.$row["ID"].' - '.$row["Name"].' </h2> <br>
+    <h3 id="title">Delete Movie</h3><br>
+    <h2>'.$row["movie_id"].' - '.$row["english_name"].' </h2> <br>
 
     <div class="form-group col-md-4">
-      <label for="id">Id</label>
-      <input type="text" class="form-control" name="ID" value="'.$row["ID"].'"  maxlength="5" readonly>
+      <label for="id">Movie ID</label>
+      <input type="text" class="form-control" name="movie_id" value="'.$row["movie_id"].'"  maxlength="5" readonly>
     </div>
 
     <div class="form-group col-md-8">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" name="Name" value="'.$row["Name"].'"  maxlength="255" readonly>
+      <label for="name">Native Name</label>
+      <input type="text" class="form-control" name="native_name" value="'.$row["native_name"].'"  maxlength="255" readonly>
     </div>
 
     <div class="form-group col-md-4">
-      <label for="category">Type</label>
-      <input type="text" class="form-control" name="Type" value="'.$row["Type"].'"  maxlength="255" readonly>
+      <label for="category">English Name</label>
+      <input type="text" class="form-control" name="english_name="'.$row["english_name"].'"  maxlength="255" readonly>
     </div>
 
     <div class="form-group col-md-4">
-      <label for="level">State</label>
-      <input type="text" class="form-control" name="State" value="'.$row["State"].'"  maxlength="255" readonly>
+      <label for="level">Release Year</label>
+      <input type="text" class="form-control" name="year_made" value="'.$row["year_made"].'"  maxlength="255" readonly>
     </div>
-
-    <div class="form-group col-md-4">
-      <label for="facilitator">Country</label>
-      <input type="text" class="form-control" name="choice_2" value="'.$row["Country"].'"  maxlength="255" readonly>
-    </div>
-
-    <div class="form-group col-md-12">
-      <label for="description">Description</label>
-      <input type="text" class="form-control" name="Description" value="'.$row["Description"].'"  maxlength="255" readonly>
-    </div>
-
-    <div class="form-group col-md-12">
-    <label for="description">Keywords</label>
-    <input type="text" class="form-control" name="Keywords" value="'.$row["Keywords"].'"  maxlength="255" readonly>
-  </div>
-
-    <div class="form-group col-md-12">
-    <label for="description">Recipe Link</label>
-    <input type="text" class="form-control" name="Recipe_links" value="'.$row["Recipe_links"].'"  maxlength="255" readonly>
-  </div>
-
-  <div class="form-group col-md-12">
-  <label for="description">Video Link</label>
-  <input type="text" class="form-control" name="Video_links" value="'.$row["Video_links"].'"  maxlength="255" readonly>
-</div>
-
-<div class="form-group col-md-12">
-<label for="description">Status</label>
-<input type="text" class="form-control" name="Status" value="'.$row["Status"].'"  maxlength="255" readonly>
-</div>
-
-    <div class="form-group col-md-12">
-    <label for="description">Notes</label>
-    <input type="text" class="form-control" name="Notes" value="'.$row["Notes"].'"  maxlength="255" readonly>
-  </div>
-
-  <div class="form-group col-md-4">
-  <label for="cadence">Image</label>
-  <input type="text" class="form-control" name="Image" value="'.$row["Image"].'"  maxlength="255" readonly>
-  </div>
 
     <br>
     <div class="text-left">
-        <button type="submit" name="submit" class="btn btn-primary btn-md align-items-center">Confirm Delete Dish</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-md align-items-center">Confirm Delete Movie</button>
     </div>
     <br> <br>
 
