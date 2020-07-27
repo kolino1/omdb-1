@@ -43,29 +43,29 @@ if ($result->num_rows > 0) {
     <h3 id="title">Delete Movie</h3><br>
     <h2>'.$row["movie_id"].' - '.$row["english_name"].' </h2> <br>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-12">
       <label for="id">Movie ID</label>
       <input type="text" class="form-control" name="movie_id" value="'.$row["movie_id"].'"  maxlength="5" readonly>
     </div>
 
-    <div class="form-group col-md-8">
+    <div class="form-group col-md-12">
       <label for="name">Native Name</label>
       <input type="text" class="form-control" name="native_name" value="'.$row["native_name"].'"  maxlength="255" readonly>
     </div>
 
-    <div class="form-group col-md-4">
-      <label for="category">English Name</label>
-      <input type="text" class="form-control" name="english_name="'.$row["english_name"].'"  maxlength="255" readonly>
+    <div class="form-group col-md-12">
+      <label for="name">English Name</label>
+      <input type="text" class="form-control" name="english_name" value="'.$row["english_name"].'"  maxlength="255" readonly>
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-12">
       <label for="level">Release Year</label>
       <input type="text" class="form-control" name="year_made" value="'.$row["year_made"].'"  maxlength="255" readonly>
     </div>
 
     <br>
     <div class="text-left">
-        <button type="submit" name="submit" class="btn btn-primary btn-md align-items-center">Confirm Delete Movie</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-md align-items-left">Confirm Delete Movie</button>
     </div>
     <br> <br>
 
