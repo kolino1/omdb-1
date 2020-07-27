@@ -20,7 +20,6 @@
 
     
 
-
     //$validate = true;    
     
 
@@ -31,13 +30,11 @@
 
     mysqli_query($db, $sql);
 
-    $movieID = "SELECT movie_id FROM movies WHERE movies.english_name = '.$EnglishName.'";
 
+    $sql1 .= "INSERT INTO movie_data(`movie_id`,`language`, `country`, `genre`, `tag_line`, `plot`) 
+    VALUES(LAST_INSERT_ID(),'$Language','$Country', '$Genre','$TagLine','$Plot')";
 
-    $sql1 = "INSERT INTO movie_data(`movie_id`,`language`, `country`, `genre`, `tag_line`, `plot`) 
-    VALUES('$movieID','$Language','$Country', '$Genre','$TagLine','$Plot')";
-
-
+    
     mysqli_query($db, $sql1);
     header('location: movies.php?createMovie=Success');
     ?>
