@@ -63,6 +63,7 @@
             <tr>
                 <td style="width:175px">Year:</td>
                 <td><input type="year"  name="Year" maxlength="50" size="50" required title="Please enter the movie year."></td>
+
             </tr>
           
 
