@@ -1,0 +1,138 @@
+// create a movie
+
+INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) 
+VALUES();
+
+INSERT INTO `movie_data` (`movie_id`, `language`, `country`, `genre`, `tag_line`, `plot`) 
+VALUES();
+
+INSERT INTO `movie_keywords` (`movie_id`, `keyword`) 
+VALUES();
+
+INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) 
+VALUES();
+
+
+INSERT INTO `movie_numbers` (`movie_id`, `running_time`, `length`, `strength`, `weight`, `budget`, `Movi`) 
+VALUES();
+
+
+INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) 
+VALUES();
+
+INSERT INTO `movie_quotes` (`movie_id`, `movie_quote_id`, `movie_quote_name`) 
+VALUES();
+
+
+INSERT INTO `movie_song` (`movie_id`, `song_id`) 
+VALUES('','');
+
+INSERT INTO `movie_trivia` (`movie_id`, `trivia`) 
+VALUES();
+
+// Script for inserting people
+
+INSERT INTO `people` (`id`, `stage_name`, `first_name`, `middle_name`, `last_name`, `gender`, `image_name`) 
+VALUES
+(),
+
+INSERT INTO `people_trivia` (`people_id`, `people_trivia_id`, `people_trivia_name`) VALUES
+();
+
+
+// Script for inserting song
+
+INSERT INTO `songs` (`song_id`, `title`, `theme`, `lyrics`) 
+VALUES();
+
+INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) 
+VALUES();
+
+INSERT INTO `song_keywords` (`song_id`, `keyword`) 
+VALUES ();
+
+INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) VALUES
+();
+
+INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
+();
+
+
+
+//  Foreign key constraints / relation
+
+-
+-- Constraints for table `movie_data`
+--
+ALTER TABLE `movie_data`
+  ADD CONSTRAINT `movie_data_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `movie_keywords`
+--
+ALTER TABLE `movie_keywords`
+  ADD CONSTRAINT `movie_keywords_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `movie_media`
+--
+ALTER TABLE `movie_media`
+  ADD CONSTRAINT `movie_media_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `movie_numbers`
+--
+ALTER TABLE `movie_numbers`
+  ADD CONSTRAINT `movie_numbers_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `movie_people`
+--
+ALTER TABLE `movie_people`
+  ADD CONSTRAINT `movie_people_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `movie_quotes`
+--
+ALTER TABLE `movie_quotes`
+  ADD CONSTRAINT `movie_quotes_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `movie_song`
+--
+ALTER TABLE `movie_song`
+  ADD CONSTRAINT `movie_song_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `movie_trivia`
+--
+ALTER TABLE `movie_trivia`
+  ADD CONSTRAINT `movie_trivia_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `people_trivia`
+--
+ALTER TABLE `people_trivia`
+  ADD CONSTRAINT `people_trivia_ibfk_1` FOREIGN KEY (`people_id`) REFERENCES `people` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `song_keywords`
+--
+ALTER TABLE `song_keywords`
+  ADD CONSTRAINT `song_keywords_ibfk_1` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `song_media`
+--
+ALTER TABLE `song_media`
+  ADD CONSTRAINT `song_media_ibfk_1` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `song_trivia`
+--
+ALTER TABLE `song_trivia`
+  ADD CONSTRAINT `song_trivia_ibfk_1` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE;
+COMMIT;
+
+
+
