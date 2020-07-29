@@ -9,19 +9,11 @@
 
   ?>
 
-
 <div class="right-content">
+
+<h3 style="float: right:"><img src="images/movies.png" style="max-height: 35px;" />Movies List</h3>
+<button style="margin: 10px; border: none;"><a class="btn btn-lg btn-primary" href="create_movie.php">Create a Movie</a></button>
     <div class="container">
-
-    <h3 ><img src="images/movies.png" style="max-height: 35px;" />Movies List</h3>
-    <button style="margin-bottom: 20px;"><a class="btn btn-sm btn-primary" href="create_movie.php">Create a Movie</a></button>
-
-
-
-      <h3 style = "color: #01B0F1;">Movies -> Movies List</h3>
-
-    <button><a class="btn btn-sm" href="create_movie.php">Create a Movie</a></button>
-
     <!--Banner Messages-->
     <div class="container-fluid">
     <?php

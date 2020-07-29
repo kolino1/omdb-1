@@ -48,7 +48,7 @@
         <br>
         <h3 id="title">Create A Movie</h3> <br>
         
-        <table>
+        <table class="table table-striped table-dark" style="width: 50%;">
             <!-- Native Name -->
             <tr>
                 <td style="width:175px">Native Name:</td>
@@ -95,7 +95,51 @@
                 <td style="width:175px">Plot:</td>
                 <td><input type="text"  name="Plot" maxlength="50" size="50" required title="Please enter the movie Plot."></td>
             </tr>
-			
+
+
+            <!-- movie keywords -->
+
+            <!-- Keyword -->
+            <tr>
+                <td style="width:175px">Movie Keyword:</td>
+                <td><input type="text"  name="Keyword" maxlength="50" size="50" required title="Please enter the movie keyword"></td>
+            </tr>
+  
+			<!-- Movie Media -->
+             <tr>
+                <td style="width:175px">Media Link:</td>
+                <td><input type="text"  name="Mlink" maxlength="50" size="50" required title="Please enter the media link"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Media Link Type:</td>
+                <td><input type="text"  name="MlinkType" maxlength="50" size="50" required title="Please enter the media link type"></td>
+            </tr>
+
+			<!-- Movie Number -->
+            <tr>
+                <td style="width:175px">Running Time:</td>
+                <td><input type="text"  name="RunningTime" maxlength="50" size="50" required title="Please enter the movie number time"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Length:</td>
+                <td><input type="text"  name="Length" maxlength="50" size="50" required title="Please enter the movie length"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Strength:</td>
+                <td><input type="text"  name="Strength" maxlength="50" size="50" required title="Please enter the movie Strength"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Weight:</td>
+                <td><input type="text"  name="Weight" maxlength="50" size="50" required title="Please enter the movie Weight"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">Budget:</td>
+                <td><input type="text"  name="Budget" maxlength="50" size="50" required title="Please enter the movie Budget"></td>
+            </tr>
+            <tr>
+                <td style="width:175px">BoxOffice:</td>
+                <td><input type="text"  name="BoxOffice" maxlength="50" size="50" required title="Please enter the movie BoxOffice"></td>
+            </tr>
         </table>
 
         <br><br>

@@ -17,25 +17,46 @@
     $Genre = mysqli_real_escape_string($db,$_POST['Genre']);
     $TagLine = mysqli_real_escape_string($db,$_POST['TagLine']);
     $Plot = mysqli_real_escape_string($db,$_POST['Plot']);
-
-    
-
+    $Keyword = mysqli_real_escape_string($db,$_POST['Keyword']);
+    $Mlink = mysqli_real_escape_string($db,$_POST['Mlink']);
+    $MlinkType = mysqli_real_escape_string($db,$_POST['MlinkType']);
+    $RunningTime = mysqli_real_escape_string($db,$_POST['RunningTime']);
+    $Length = mysqli_real_escape_string($db,$_POST['Length']);
+    $Strength = mysqli_real_escape_string($db,$_POST['Strength']);
+    $Weight = mysqli_real_escape_string($db,$_POST['Weight']);
+    $Budget = mysqli_real_escape_string($db,$_POST['Budget']);
+    $BoxOffice = mysqli_real_escape_string($db,$_POST['BoxOffice']);
     //$validate = true;    
     
 
     $sql = "INSERT INTO movies(`native_name`, `english_name`, `year_made`)
-
-    VALUES ('$NativeName','$EnglishName','$Year')
-    ";
+    VALUES ('$NativeName','$EnglishName','$Year')";
 
     mysqli_query($db, $sql);
 
-
-    $sql1 .= "INSERT INTO movie_data(`movie_id`,`language`, `country`, `genre`, `tag_line`, `plot`) 
+    $sqlMovieData .= "INSERT INTO movie_data(`movie_id`,`language`, `country`, `genre`, `tag_line`, `plot`) 
     VALUES(LAST_INSERT_ID(),'$Language','$Country', '$Genre','$TagLine','$Plot')";
 
+    $sqlKeyword = "INSERT INTO `movie_keywords` (`movie_id`, `keyword`) 
+    VALUES(LAST_INSERT_ID(),'$Keyword');";
+
+    $sqlMovieMedia = "INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) 
+    VALUES(LAST_INSERT_ID(),'$Mlink','$MlinkType',LAST_INSERT_ID() );";
     
-    mysqli_query($db, $sql1);
+
+    $sqlMovieNumbers = "INSERT INTO `movie_numbers` (`movie_id`, `running_time`, `length`, `strength`, `weight`, `budget`, `box_office`) 
+    VALUES(LAST_INSERT_ID(),'$RunningTime','$Length','$Strength','$Weight','$Budget','$BoxOffice')";
+
+
+    // INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) 
+    // VALUES();
+
+    // INSERT INTO `movie_quotes` (`movie_id`, `movie_quote_id`, `movie_quote_name`) 
+    // VALUES();
+    mysqli_query($db, $sqlMovieData);
+    mysqli_query($db, $sqlKeyword);
+    mysqli_query($db, $sqlMovieMedia);
+    mysqli_query($db, $sqlMovieNumbers);
     header('location: movies.php?createMovie=Success');
     ?>
 	<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
