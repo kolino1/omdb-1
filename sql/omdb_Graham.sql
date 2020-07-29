@@ -73,9 +73,9 @@ INSERT INTO `movie_numbers` (`movie_id`, `running_time`, `length`, `strength`, `
 (30, 81, NULL, NULL, NULL, 21000000, 83100000);
 
 INSERT INTO `movie_trivia` (`movie_id`, `trivia`) VALUES
-(30, 'In the Guinness World Records 2001, this film was said to have the most profanity used in an animated film. The book cited a total of 399 swear words, including 146 uses of the word "fuck," along with 199 offensive gestures and 221 acts of violence.'),
-(30, 'Trey Parker stated that he is a fan of the musical Les Misérables. The song "La Resistance" is based on the Les Misérables song "One Day More."'),
-(30, 'South Park: Bigger, Longer & Uncut intentionally went up to using 399 swear words because the MPAA would have given the film an NC-17 rating if at least 400 swear words were used in the film.');
+(30, 'In the Guinness World Records 2001, this film was said to have the most profanity used in an animated film. The book cited a total of 399 swear words, including 146 uses of the word "fuck," along with 199 offensive gestures and 221 acts of violence.');
+-- (30, 'Trey Parker stated that he is a fan of the musical Les Misérables. The song "La Resistance" is based on the Les Misérables song "One Day More."'),
+-- (30, 'South Park: Bigger, Longer & Uncut intentionally went up to using 399 swear words because the MPAA would have given the film an NC-17 rating if at least 400 swear words were used in the film.');
 
 INSERT INTO `people_trivia` (`people_id`, `people_trivia_id`, `people_trivia_name`) VALUES
 (6, 2503, "Cannibal! The Musical has Matt and Trey providing commentary, during which Trey gloats over how he\'s now a famous comedy writer and his \"slut of an ex\" is now \"dating a nobody\"");

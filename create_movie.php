@@ -118,27 +118,41 @@
 			<!-- Movie Number -->
             <tr>
                 <td style="width:175px">Running Time:</td>
-                <td><input type="text"  name="RunningTime" maxlength="50" size="50" required title="Please enter the movie number time"></td>
+                <td><input type="number"  name="RunningTime" maxlength="50" size="50" required title="Please enter the movie number time"></td>
             </tr>
             <tr>
                 <td style="width:175px">Length:</td>
-                <td><input type="text"  name="Length" maxlength="50" size="50" required title="Please enter the movie length"></td>
+                <td><input type="number"  name="Length" maxlength="50" size="50" required title="Please enter the movie length"></td>
             </tr>
             <tr>
                 <td style="width:175px">Strength:</td>
-                <td><input type="text"  name="Strength" maxlength="50" size="50" required title="Please enter the movie Strength"></td>
+                <td><input type="number"  name="Strength" maxlength="50" size="50" required title="Please enter the movie Strength"></td>
             </tr>
             <tr>
                 <td style="width:175px">Weight:</td>
-                <td><input type="text"  name="Weight" maxlength="50" size="50" required title="Please enter the movie Weight"></td>
+                <td><input type="number"  name="Weight" maxlength="50" size="50" required title="Please enter the movie Weight"></td>
             </tr>
             <tr>
                 <td style="width:175px">Budget:</td>
-                <td><input type="text"  name="Budget" maxlength="50" size="50" required title="Please enter the movie Budget"></td>
+                <td><input type="number"  name="Budget" maxlength="50" size="50" required title="Please enter the movie Budget"></td>
             </tr>
             <tr>
                 <td style="width:175px">BoxOffice:</td>
-                <td><input type="text"  name="BoxOffice" maxlength="50" size="50" required title="Please enter the movie BoxOffice"></td>
+                <td><input type="number"  name="BoxOffice" maxlength="50" size="50" required title="Please enter the movie BoxOffice"></td>
+            </tr>
+
+            <!-- Movie Quote -->
+
+            <tr>
+                <td style="width:175px">Movie Quote:</td>
+                <td><input type="text"  name="MovieQuote" maxlength="300" size="50" required title="Please enter the movie quote name"></td>
+            </tr>
+
+             <!-- Movie Trivia -->
+
+             <tr>
+                <td style="width:175px">Movie Trivia:</td>
+                <td><input type="text"  name="Trivia" maxlength="300" size="50" required title="Please enter the movie Trivia"></td>
             </tr>
         </table>
 
